@@ -36,9 +36,9 @@
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    width: 300px; 
+    width: 280px; 
     box-sizing: border-box; 
-    margin-right: 15px;
+    margin-right: 5px;
 }
 
 .product-title {
