@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mos Burger | Cart</title>
+    <link rel="stylesheet" href="./assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assests/css/style.css">
+</head>
+
+<body>
+    <header class="top-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div>
+                        <a class="navbar-brand" href="#"><img src="./assests/images/logo.png" class="img-fluid w-50"
+                                alt="logo"></a>
+                    </div>
+                </div>
+                <div class="col-lg-10 d-flex justify-content-end">
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link " aria-current="page" href="./">Place Order</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="addcart" href="./cart.html">Cart</a>
+                                    </li>
+                                    <li class="nav-item"></li>
+                                        <a class="nav-link active" aria-current="page" href="./removeproduct.html">Remove Products</a>
+                                    </li>
+                                    <li class="nav-item"></li>
+                                        <a class="nav-link" aria-current="page" href="./addproduct.html">Add Products</a>
+                                    </li>
+                                    <a class="nav-link" href="#">Order Report</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="mt-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="item-card">
+                            <img src="./assests/images/cheese-burger.png" alt="Cheese Burger" class="img-fluid">
+                            <div class="product-title">Cheese Burger</div>
+                            <div class="product-price">LKR 990/- (Dis - 10%)</div>
+                            <button class="remBtn">Remove</button>
+                        </div>
+                        
+                        <div class="item-card">
+                            <img src="./assests/images/regular.jpg" alt="Burger Regular" class="img-fluid">
+                            <div class="product-title">Burger Regular</div>
+                            <div class="product-price">LKR 650/- (Dis - 5%)</div>
+                            <button class="remBtn">Remove</button>
+                        </div>
+                        <div class="item-card">
+                            <img src="./assests/images/large-burger.jpg" alt="Burger Regular" class="img-fluid">
+                            <div class="product-title">Burger Large</div>
+                            <div class="product-price">LKR 1300/- (Dis - 10%)</div>
+                            <button class="remBtn">Remove</button>
+                        </div>
+                        <div class="item-card">
+                            <img src="./assests/images/drum-burgur.jpg" alt="Drum Burger" class="img-fluid">
+                            <div class="product-title">Drum Burger</div>
+                            <div class="product-price">LKR 600/- (Dis - 0%)</div>
+                            <button class="remBtn">Remove</button>
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="mt-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="item-card">
+                            <img src="./assests/images/cheese-burger.png" alt="Cheese Burger" class="img-fluid">
+                            <div class="product-title">Cheese Burger</div>
+                            <div class="product-price">LKR 990/- (Dis - 10%)</div>
+                            <button class="remBtn">Remove</button>
+                        </div>
+                        
+                        <div class="item-card">
+                            <img src="./assests/images/regular.jpg" alt="Burger Regular" class="img-fluid">
+                            <div class="product-title">Burger Regular</div>
+                            <div class="product-price">LKR 650/- (Dis - 5%)</div>
+                            <button class="remBtn">Remove</button>
+                        </div>
+                        <div class="item-card">
+                            <img src="./assests/images/large-burger.jpg" alt="Burger Regular" class="img-fluid">
+                            <div class="product-title">Burger Large</div>
+                            <div class="product-price">LKR 1300/- (Dis - 10%)</div>
+                            <button class="remBtn">Remove</button>
+                        </div>
+                        <div class="item-card">
+                            <img src="./assests/images/drum-burgur.jpg" alt="Drum Burger" class="img-fluid">
+                            <div class="product-title">Drum Burger</div>
+                            <div class="product-price">LKR 600/- (Dis - 0%)</div>
+                            <button class="remBtn">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="./assests/js/bootstrap.min.js"></script>
+    <script src="./assests/js/app.js"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ 
+    <script>
+        document.querySelectorAll('.remBtn').forEach(button => {
+            button.addEventListener('click', function() {
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "Do you want to permanently delete this item?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        this.parentElement.remove();
+    
+                        Swal.fire(
+                            'Deleted!',
+                            'The item has been deleted.',
+                            'success'
+                        );
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

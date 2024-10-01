@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mos Burger | Cart</title>
+    <link rel="stylesheet" href="./assests/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assests/css/style.css">
+</head>
+
+<body>
+    <header class="top-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div>
+                        <a class="navbar-brand" href="#"><img src="./assests/images/logo.png" class="img-fluid w-50"
+                                alt="logo"></a>
+                    </div>
+                </div>
+                <div class="col-lg-10 d-flex justify-content-end">
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link " aria-current="page" href="./">Place Order</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="addcart" href="./cart.html">Cart</a>
+                                    </li>
+                                    <li class="nav-item"></li>
+                                    <a class="nav-link" aria-current="page" href="./removeproduct.html">Remove
+                                        Products</a>
+                                    </li>
+                                    <li class="nav-item"></li>
+                                    <a class="nav-link" aria-current="page" href="./addproduct.html">Add Products</a>
+                                    </li>
+                                    <a class="nav-link" href="#">Order Report</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="mt-5">
+        <div class="container">
+            <table class="order-table" id="cartTable">
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Unit Price</th>
+                        <th>Quantity</th>
+                        <th>Discount</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="mt-5 mb-5">
+        <div class="container">
+            <div class="row mainCart gap-3">
+                <div class="col-lg-6 cartPage">
+                    <h1 class="mt-3 cusDetailsHead text-center">Customer Details</h1>
+                    <div class="mb-3 row">
+                        <label for="NIC" class="col-sm-3 col-form-label">ID No.</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="CusNIC" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="CusName" class="col-sm-3 col-form-label">Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="CusName" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="CusAddress" class="col-sm-3 col-form-label">Address</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="CusAddress" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="CusContact" class="col-sm-3 col-form-label">Mobile Number</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="CusContact" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 orderdetailsPage">
+                    <h1 class="mt-3 cusDetailsHead text-center">Order Details</h1>
+                    <div class="mb-3 row">
+                        <label for="SubTotal" class="col-sm-3 col-form-label">Sub Total</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-controll" id="SubTotal" readonly>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="Discount" class="col-sm-3 col-form-label">Discount</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-controll" id="Discount" readonly>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="Delivery" class="col-sm-3 col-form-label">Delivery</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-controll" id="Delivery" readonly>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="Total" class="col-sm-3 col-form-label">Total</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-controll" id="Total" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4 justify-content-end">
+                <div class="col-lg-3">
+                    <div class="orderbtns">
+                        <input type="button" class="placeOrder" value="Place Order" onclick="validateAndPlaceOrder()">
+
+                        <input type="button" class="back" value="Clear Order" onclick="clearOrder()">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="./assests/js/bootstrap.min.js"></script>
+    <script src="./assests/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            loadCartData();
+        });
+        function loadCartData() {
+            const deliveryCharge = 100;
+            let subTotal = 0;
+            let discount = 0;
+
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems.forEach(item => {
+                const itemTotal = item.price * item.quantity * (1 - item.discount / 100);
+                subTotal += item.price * item.quantity;
+                discount += item.price * item.quantity * (item.discount / 100);
+                updateCartTable(item.id, item.name, item.price, item.discount, item.quantity);
+            });
+
+            const total = subTotal - discount + deliveryCharge;
+
+            document.getElementById('SubTotal').value = "+ Rs " + subTotal.toFixed(2);
+            document.getElementById('Discount').value = " - Rs " + discount.toFixed(2);
+            document.getElementById('Delivery').value = "+ Rs " + deliveryCharge + "/=";
+            document.getElementById('Total').value = "Rs " + total.toFixed(2);
+        }
+        function updateCartTable(itemID, itemName, itemPrice, discount, qty) {
+            console.log('Updating Cart Table');
+            const tableBody = document.getElementById('cartTable').getElementsByTagName('tbody')[0];
+            if (!tableBody) {
+                console.error('Table body not found');
+                return;
+            }
+
+            const newRow = tableBody.insertRow();
+            const itemIdCell = newRow.insertCell(0);
+            const itemNameCell = newRow.insertCell(1);
+            const unitPriceCell = newRow.insertCell(2);
+            const qtyCell = newRow.insertCell(3);
+            const discountCell = newRow.insertCell(4);
+            const totalCell = newRow.insertCell(5);
+
+            itemIdCell.textContent = itemID;
+            itemNameCell.textContent = itemName;
+            unitPriceCell.textContent = `LKR ${itemPrice}`;
+            qtyCell.textContent = qty;
+            discountCell.textContent = `${discount}%`;
+
+            const total = itemPrice * qty * (1 - discount / 100);
+            totalCell.textContent = `LKR ${total.toFixed(2)}`;
+
+        }
+
+
+        function validateAndPlaceOrder() {
+
+            const nic = document.getElementById('CusNIC').value.trim();
+            const name = document.getElementById('CusName').value.trim();
+            const contact = document.getElementById('CusContact').value.trim();
+            const address = document.getElementById('CusAddress').value.trim();
+
+            if (!nic || !name || !address || !contact) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Please provide Customer Details!',
+                });
+                return;
+            }
+            Swal.fire({
+                icon: 'success',
+                title: 'Order Placed Successfully!',
+                text: 'Receipt will be downloading shortly',
+            });
+
+            generatePDF();
+        }
+
+
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const orderId = "OD" + new Date().getTime().toString().slice(-6);
+            const date = new Date().toLocaleDateString();
+            const time = new Date().toLocaleTimeString();
+
+            const subTotal = document.getElementById('SubTotal').value;
+            const discount = document.getElementById('Discount').value;
+            const delivery = document.getElementById('Delivery').value;
+            const total = document.getElementById('Total').value;
+
+            const nic = document.getElementById('CusNIC').value;
+            const name = document.getElementById('CusName').value;
+            const contact = document.getElementById('CusContact').value;
+            const address = document.getElementById('CusAddress').value;
+
+            doc.setFontSize(28);
+            doc.text("MOS Burger", 80, 19);
+
+            doc.setFontSize(12);
+            doc.text("Order ID : " + orderId, 13, 28);
+            doc.text("Date : " + date, 13, 38);
+            doc.text("Time : " + time, 13, 48);
+            doc.text("Sub Total : " + subTotal, 13, 58);
+            doc.text("Discount : " + discount, 13, 68);
+            doc.text("Delivery : " + delivery, 13, 78);
+            doc.text("Total : " + total, 13, 88);
+
+            doc.text("Customer NIC : " + nic, 13, 98);
+            doc.text("Customer Name : " + name, 13, 108);
+            doc.text("Customer Contact : " + contact, 13, 118);
+            doc.text("Customer Address : " + address, 13, 128);
+
+            doc.save("Order-Details.pdf");
+
+        }
+
+    </script>
+</body>
+
+</html>
